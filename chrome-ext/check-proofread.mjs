@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { proofreadNotice } from './lib/proofread.js';
+assert.equal(proofreadNotice('').ok,false);
+assert.equal(proofreadNotice('1. 제목\n 가. 항목\n  1) 내용\n  2) 내용\n 나. 항목\n  1) 새 내용\n2. 다음\n 가. 새 항목').issues.length,0);
+let r=proofreadNotice('1. 제목\n3. 누락\n3. 중복\n2. 역순');
+assert.deepEqual(r.issues.map(i=>i.type),['번호 누락 의심','번호 중복','번호 역순·재시작']);
+assert.equal(proofreadNotice('가. 처음\n다. 누락').issues[0].line,2);
+assert.equal(proofreadNotice('1) 처음\n3) 누락').issues.length,1);
+assert.equal(proofreadNotice('2026. 11. 2.\n3.14\n일반 본문').issues.length,0);
+assert.equal(proofreadNotice('몇일 후에 할수 있습니다.').issues.length,2);
+assert.equal(proofreadNotice('며칠 후에 할 수 있습니다.').issues.length,0);
+assert.equal(proofreadNotice('x'.repeat(100001)).ok,false);
+console.log('PASS: nested numbering, resets, omissions, duplicates, reverse order, dates, typo rules, input limits');

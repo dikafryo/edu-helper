@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {inspectOfficialMail,submitOfficialMailPassword} from './lib/official-mail.js';
+let clicks=0,controls=[];
+globalThis.location={origin:'https://mail.korea.kr'};
+globalThis.document={querySelectorAll:()=>controls,querySelector:()=>null};
+const link=text=>({innerText:text,getClientRects:()=>[{}],click:()=>clicks++});
+controls=[link('인증서 로그인')];assert.equal(inspectOfficialMail(false).state,'login');assert.equal(clicks,0);
+assert.equal(inspectOfficialMail(true).state,'certificate-requested');assert.equal(clicks,1);
+controls=[link('로그아웃')];assert.equal(inspectOfficialMail(true).state,'logged-in');assert.equal(clicks,1);
+location.origin='https://other.example';assert.equal(inspectOfficialMail(true).state,'wrong-origin');assert.equal(submitOfficialMailPassword('test-only'),false);
+location.origin='https://mail.korea.kr';assert.equal(submitOfficialMailPassword('test-only'),false);
+console.log('PASS: mail-only origin, existing-login detection, certificate entry, no password without supported dialog');

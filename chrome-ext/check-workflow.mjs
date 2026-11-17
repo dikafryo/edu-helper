@@ -1,0 +1,37 @@
+import assert from 'node:assert/strict';
+import { inspectWorkflow, workflowStep } from './lib/workflow.js';
+let clicks = 0;
+const control = { click() { clicks++; }, enabled: true, visible: true };
+let apps = [];
+globalThis.window = { cpr: { core: { Platform: { INSTANCE: { getAllRunningAppInstances: () => apps } } } } };
+globalThis.document = { querySelectorAll: () => [] };
+const app = (id, expected) => ({ app: { id: 'edu/' + id }, lookup(key) { assert.equal(key, expected); return control; } });
+assert.equal(inspectWorkflow('neis').ok, false);
+apps = [app('ga/srv/mym/mm/srv_mymmm00_p00', 'btnAprvDmnd')];
+assert.equal(inspectWorkflow('neis').step, '승인요청 창 열기');
+assert.equal(clicks, 0);
+assert.equal(inspectWorkflow('neis', true, '다른 단계').ok, false);
+assert.equal(clicks, 0);
+assert.equal(inspectWorkflow('neis', true, '승인요청 창 열기').ok, true);
+assert.equal(clicks, 1);
+apps = [app('cm/wam/woa/pm/wam_woapm07_p00', 'btnSelectMySancr')];
+assert.equal(inspectWorkflow('neis').step, '개인결재선 열기');
+control.enabled = false;
+assert.equal(inspectWorkflow('neis').ok, false);
+control.enabled = true;
+apps = [app('cm/wam/woa/pm/wam_woapm07_p02', '')];
+assert.equal(inspectWorkflow('neis').ok, false);
+const button = text => ({ innerText: text, getClientRects: () => [1], getAttribute: () => null, click() { clicks++; } });
+document.querySelectorAll = () => [button('상신'), button('다음')];
+assert.equal(inspectWorkflow('draft').step, '기안 다음 단계 열기');
+document.querySelectorAll = () => [button('다음'), button('다음')];
+assert.equal(inspectWorkflow('draft').ok, false);
+document.querySelectorAll = () => [button('결재대기')];
+assert.equal(inspectWorkflow('approval').ok, true);
+globalThis.chrome = { tabs: { query: async () => [{ id: 7, url: 'https://pen.neis.go.kr/main' }] }, scripting: { executeScript: async () => [
+  { frameId: 0, result: { ok: false } }, { frameId: 4, result: { ok: true, step: '승인요청 창 열기' } }
+] } };
+assert.equal((await workflowStep('neis', false)).target.frameId, 4);
+assert.equal((await workflowStep('neis', true, '', { tabId: 8, frameId: 4 })).ok, false);
+assert.equal((await workflowStep('draft', false)).ok, false);
+console.log('PASS: inspect without clicks, stage mismatch, disabled control, NEIS stages, ambiguous buttons, frame routing, changed tab, host restriction');

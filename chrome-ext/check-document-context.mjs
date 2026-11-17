@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {parseIssuedReference,readDocumentContext} from './lib/document-context.js';
+import {newSchoolNoticeDraft} from './lib/notice.js';
+const body='제목 성과보고회 참석 요청\n1. 관련: 옛부서-606(2026. 2. 13.)\n2. 참석 바랍니다.\n시행 직업교육정책과-1234 (2026. 11. 2.)';
+assert.equal(parseIssuedReference(body).value,'1. 관련: 직업교육정책과-1234(2026. 11. 2.)');
+assert.equal(parseIssuedReference('1. 관련: 옛부서-606(2026. 2. 13.)').ok,false);
+assert.equal(parseIssuedReference('시행 교육과-1(2026. 2. 30.)').ok,false);
+assert.equal(parseIssuedReference('시행 교육과-1(2026년 11월 2일)').ok,true);
+const draft=newSchoolNoticeDraft('회의',body,[]);
+assert.ok(draft.includes('1. 관련: 직업교육정책과-1234'));
+assert.ok(!draft.includes('넘김:'));
+const context={window:{getSelection:()=>''},document:{querySelectorAll:()=>[],querySelector:()=>null,body:{innerText:'K-에듀파인 Help Desk',textContent:'script secret'}}};
+const result=vm.runInNewContext('('+readDocumentContext.toString()+')()',context);
+assert.equal(result.ok,false); assert.equal(result.body,'');
+context.document.body.innerText=body;
+assert.equal(vm.runInNewContext('('+readDocumentContext.toString()+')()',context).ok,true);
+console.log('PASS: issued reference, old related rejection, date validation, draft, non-document rejection');

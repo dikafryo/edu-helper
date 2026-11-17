@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { parseTableText, tableClipboard } from './lib/table-format.js';
+assert.deepEqual(parseTableText('제목\t내용\n일시\t월요일'),[['제목','내용'],['일시','월요일']]);
+assert.deepEqual(parseTableText('|항목|내용|\n|---|---|\n|장소|회의실|'),[['항목','내용'],['장소','회의실']]);
+assert.throws(()=>parseTableText('일반 문장'));
+const result=tableClipboard([[{text:'<img src=x onerror=alert(1)>',rowSpan:2,colSpan:2}],[{text:'첫 줄\n둘째 줄'}]]);
+assert.ok(result.html.includes('rowspan="2" colspan="2"'));
+assert.ok(!result.html.includes('<img'));
+assert.ok(result.html.includes('&lt;img'));
+assert.ok(result.html.includes('첫 줄<br>둘째 줄'));
+assert.ok(result.html.includes('border:1px solid #000'));
+assert.ok(result.text.includes('첫 줄\n둘째 줄'));
+console.log('PASS: TSV/Markdown parsing, merged cells, borders, multiline text, HTML escaping');

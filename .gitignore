@@ -1,0 +1,29 @@
+# 개인 설정·실행 데이터 (PC마다 다르고 개인정보가 들어갈 수 있음)
+/data/
+/outbox/
+maskmaps/
+*.flag
+settings.local.json
+.env
+.env.*
+
+# 실제 업무 화면 캡처·덤프 (실명·학교·공문 정보 포함)
+cap/*.txt
+cap/*.png
+cap/*.json
+cap/.select-page
+docs/*.png
+
+# 비밀키·배포 산출물
+*.pem
+*.key
+*.crx
+*.zip
+/dist/
+
+# 백업·도구
+*.bak*
+.claude/
+.vscode/
+Thumbs.db
+desktop.ini

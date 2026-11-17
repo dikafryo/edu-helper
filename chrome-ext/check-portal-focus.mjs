@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {prepareCertDialog} from './lib/portal-open.js';
+const calls=[];let opened=false;
+const button={offsetWidth:10,click(){calls.push('click');opened=true;}};
+const row={offsetWidth:10,cells:[{}, {innerText:'test certificate'}],classList:{contains:()=>true}};
+globalThis.document={querySelector:s=>s==='#btnLgn'?button:s==='#kc_dialog_default'&&opened?{offsetWidth:20}:null,querySelectorAll:()=>opened?[row]:[]};
+assert.equal((await prepareCertDialog('')).ok,true);assert.deepEqual(calls,['click']);
+calls.length=0;assert.equal((await prepareCertDialog('')).ok,true);assert.equal(calls.length,0);
+opened=false;button.disabled=true;assert.equal((await prepareCertDialog('')).ok,false);assert.equal(calls.length,0);
+console.log('PASS: one click opens the certificate dialog; an open dialog is reused; a disabled button is not clicked');

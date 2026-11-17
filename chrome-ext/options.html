@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><title>교직원 업무도우미 옵션</title>
+<link rel="stylesheet" href="options.css"/>
+</head>
+<body>
+  <aside class="settings-sidebar">
+    <strong class="settings-brand">교직원 업무도우미</strong><p class="muted">나의 업무 설정</p>
+    <nav aria-label="설정 메뉴">
+      <a href="#start">시작 안내</a><a href="#security">인증서 비밀번호</a>
+      <a href="#services">외부 서비스</a>
+      <a href="#routines">복무 루틴</a><a href="#approval">결재 진행</a>
+      <a href="#appearance">화면·단축키</a><a href="#advanced">고급 설정</a><a href="#about">정보·권한</a>
+    </nav>
+  </aside>
+  <main class="settings-main">
+  <div class="eyebrow">PEN · WORKSPACE</div>
+  <h1>나에게 맞는 업무 도우미</h1>
+  <p class="muted">필요한 설정을 왼쪽에서 선택하세요. 설정은 현재 브라우저에 저장됩니다.</p>
+  <section class="settings-card" data-settings-panel="start">
+    <h2>처음 시작하기</h2>
+    <ol class="setup-steps"><li><strong>업무포털에 로그인</strong><p>아래 인증서 비밀번호를 저장하면 팝업의 바로 열기가 인증서 창까지 진행합니다.</p></li></ol>
+  </section>
+
+  <section class="settings-card" data-settings-panel="security" hidden>
+  <h2>01 · 인증서 비밀번호</h2>
+  <p class="muted">업무포털·공직메일 인증서 로그인 창에 자동으로 입력할 비밀번호입니다. 이 브라우저에만 저장되며 외부로 전송하지 않습니다.</p>
+  <div class="row">
+    <label for="certPw">인증서 비밀번호</label>
+    <input id="certPw" type="password" autocomplete="new-password"/>
+    <label for="certPw2">인증서 비밀번호 확인</label>
+    <input id="certPw2" type="password" autocomplete="new-password"/>
+  </div>
+  <button type="button" id="btnSaveCert">인증서 비밀번호 저장</button>
+  <p id="vaultStatus" class="muted" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="settings-card" data-settings-panel="services" hidden>
+  <h2>외부 서비스</h2>
+  <p class="muted">서비스명과 도메인, 로그인 방식을 저장하면 팝업에서 버튼 한 번으로 열고 자동 로그인합니다. 아이디·비밀번호는 이 브라우저에만 저장되며 외부로 전송하지 않습니다.</p>
+  <div class="row">
+    <label for="serviceName">서비스명</label>
+    <input id="serviceName" type="text" placeholder="예: 공직메일"/>
+    <label for="serviceDomain">도메인</label>
+    <input id="serviceDomain" type="text" placeholder="예: https://mail.korea.kr/ 또는 http://service.example.com/"/>
+    <label for="serviceMethod">로그인 방식</label>
+    <select id="serviceMethod"><option value="password">아이디·비밀번호</option><option value="certificate">인증서</option></select>
+  </div>
+  <div class="row" id="serviceCredRow">
+    <label for="serviceId">아이디</label>
+    <input id="serviceId" type="text" autocomplete="off"/>
+    <label for="servicePassword">비밀번호</label>
+    <input id="servicePassword" type="password" autocomplete="new-password"/>
+  </div>
+  <button type="button" id="btnAddService">서비스 추가</button>
+  <p id="serviceStatus" class="muted" role="status" aria-live="polite"></p>
+  <div id="serviceList"></div>
+  </section>
+
+  <section class="settings-card" data-settings-panel="routines" hidden>
+  <h2>02 · 자주 쓰는 복무 루틴</h2>
+  <p class="muted">시간·사유를 저장해 팝업에서 다시 쓰세요. 첫 루틴은 복무 단축키 대상입니다. 적용 후 날짜와 내용을 확인하고 상신은 직접 해주세요.</p>
+  <div id="routineList"></div>
+  <button type="button" id="addRoutine">+ 루틴 추가</button>
+  <button type="button" id="saveRoutines">복무 루틴 저장</button>
+  <p id="routineStatus" role="status" aria-live="polite"></p>
+  </section>
+  <section class="settings-card" data-settings-panel="approval" hidden>
+    <h2>결재 진행</h2>
+    <p>업무 탭을 선택한 상태에서 팝업의 <strong>결재 단계 이어가기</strong>를 사용하세요.</p>
+    <ol class="setup-steps"><li><strong>나이스 복무</strong><p>입력 내용 확인 → 복무 → 결재선 → 승인요청 창 열기. 다시 확인하면 개인결재선 창을 열 수 있습니다. 결재선 선택·지정·상신은 직접 진행합니다.</p></li>
+    <li><strong>에듀파인 결재대기</strong><p>로그인한 에듀파인 화면에서 결재대기 메뉴를 찾습니다. 직접 링크로 이동되지 않으면 이 메뉴 방식으로 확인하세요.</p></li>
+    <li><strong>공문 기안</strong><p>현재 화면의 ‘다음’ 또는 ‘다음 단계’ 버튼을 찾습니다. 후보가 여러 개거나 없으면 임의 클릭하지 않고 안내합니다.</p></li></ol>
+    <p class="muted">승인요청은 임시저장을 동반할 수 있습니다. 최종 상신·발송·결재 승인은 자동 실행하지 않습니다. 화면 구조가 다르면 직접 진행해야 합니다.</p>
+  </section>
+  <section class="settings-card" data-settings-panel="appearance" hidden>
+    <h2>화면·단축키</h2>
+    <label for="settingsTheme">팝업 색상</label><select id="settingsTheme"><option value="sky">하늘</option><option value="black">블랙</option><option value="white">화이트</option><option value="mint">민트</option><option value="lavender">라벤더</option><option value="peach">피치</option><option value="beige">베이지</option><option value="pink">핑크</option></select>
+    <p id="themeStatus" role="status"></p>
+    <h3>현재 단축키</h3><ul id="shortcutList"></ul><p class="muted">변경: Chrome 주소창에 chrome://extensions/shortcuts 입력</p>
+  </section>
+  <section class="settings-card" data-settings-panel="about" hidden><h2>정보·권한</h2><p id="settingsVersion"></p><h3>사용하는 권한</h3><ul id="permissionList"></ul><h3>동작 대상 사이트</h3><ul id="hostList"></ul><p class="muted">설치된 교직원 업무도우미 구성 파일의 실제 권한을 표시합니다.</p></section>
+  <details data-settings-panel="advanced" hidden open>
+  <summary>고급 설정 · 과제카드 / 출장·복무 JSON</summary>
+  <p class="muted">아래 JSON을 저장하면 루틴 편집기도 갱신됩니다. 편집 중인 루틴은 먼저 저장하세요.</p>
+  <label for="cards">taskCards JSON</label>
+  <textarea id="cards" aria-label="과제카드 JSON"></textarea>
+  <label for="travel">travelForm JSON</label>
+  <textarea id="travel" aria-label="출장 폼 JSON"></textarea>
+  <label for="duty">dutyForm JSON</label>
+  <textarea id="duty" aria-label="복무 폼 JSON"></textarea>
+  <label for="presets">dutyPresets JSON</label>
+  <textarea id="presets" aria-label="복무 프리셋 JSON"></textarea>
+  <button type="button" id="save">JSON 저장</button>
+  <div id="msg" class="muted" role="status" aria-live="polite"></div>
+  <script src="options.js" type="module"></script>
+  </details>
+  </main>
+</body></html>

@@ -1,0 +1,30 @@
+[
+  {
+    "Key": "시간외",
+    "Label": "시간외",
+    "Reason": "시간외근무",
+    "Time": "18:00~20:00",
+    "Url": "https://pen.eduptl.kr/bpm_man_mn00_001.do"
+  },
+  {
+    "Key": "연가",
+    "Label": "연가",
+    "Reason": "연가",
+    "Time": "종일",
+    "Url": "https://pen.eduptl.kr/bpm_man_mn00_001.do"
+  },
+  {
+    "Key": "조퇴",
+    "Label": "조퇴",
+    "Reason": "조퇴",
+    "Time": "16:00",
+    "Url": "https://pen.eduptl.kr/bpm_man_mn00_001.do"
+  },
+  {
+    "Key": "외출",
+    "Label": "외출",
+    "Reason": "외출",
+    "Time": "14:00~15:00",
+    "Url": "https://pen.eduptl.kr/bpm_man_mn00_001.do"
+  }
+]

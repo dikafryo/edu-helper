@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {readFileSync} from 'node:fs';
+const source=readFileSync(new URL('./background.js',import.meta.url),'utf8');
+let state={pinLockEnabled:true,penUnlockedUntil:0}, badge='', alarm;
+const ctx=vm.createContext({Date,UNLOCK_MS_DEFAULT:600000,chrome:{storage:{local:{get:async()=>({...state}),set:async v=>Object.assign(state,v)}},alarms:{create:async(name,info)=>{alarm={name,...info};}},action:{setBadgeText:async v=>{badge=v.text;},setBadgeBackgroundColor:async()=>{},setTitle:async()=>{}}}});
+vm.runInContext(source.slice(source.indexOf('let memSession ='),source.indexOf('async function wipeVaultStorage')),ctx);
+await ctx.syncPinBadge(); assert.equal(badge,'');
+vm.runInContext('memSession={pinVerifiedAt:Date.now()}',ctx);
+await ctx.markUnlocked(600000); assert.equal(badge,'ON'); assert.equal(alarm.name,'pen-pin-expiry');
+await ctx.lockNow(); await ctx.syncPinBadge(); assert.equal(badge,'');
+vm.runInContext('memSession={}',ctx); state.penUnlockedUntil=Date.now()-1;
+await ctx.syncPinBadge(); assert.equal(badge,'');
+state.penUnlockedUntil=Date.now()+600000;
+ctx.clearMemSession(); await ctx.syncPinBadge(); assert.equal(badge,'');
+state.pinLockEnabled=false; vm.runInContext('memSession={}',ctx);
+await ctx.syncPinBadge(); assert.equal(badge,'');
+console.log('PASS: PIN unlock ON; lock, expiry, worker session loss and disabled PIN clear badge');

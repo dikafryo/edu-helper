@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {preserveNotice,noticeTitle} from './lib/notice-preserve.js';
+const continuation='2. 보고회에 참석하시기 바랍니다.\n  가. 일시: 2026. 11. 25.\n  나. 장소: 부산\n3. 회신 바랍니다.\n붙임 계획 1부. 끝.';
+const source='교육부\n제목 보고회 참석 요청\n1. 관련: 옛부서-606(2026. 2. 13.)\n'+continuation+'\n시행\t직업교육정책과-1234\t(2026. 11. 2.)\n접수 학교-55';
+const result=preserveNotice(source);
+assert.equal(result.reference,'1. 관련: 직업교육정책과-1234(2026. 11. 2.)');
+assert.equal(result.body,result.reference+'\n'+continuation);
+assert.ok(!result.body.includes('606'));
+assert.ok(!result.body.includes('접수'));
+assert.equal(noticeTitle('보고회 요청'),'보고회 요청 안내');
+assert.equal(noticeTitle('보고회 안내'),'보고회 안내');
+assert.throws(()=>preserveNotice('1. 관련: 옛부서-606(2026. 2. 13.)\n2. 참석'),/시행/);
+assert.throws(()=>preserveNotice('본문\n시행 부서-1(2026. 11. 2.)'),/2\./);
+console.log('PASS: replace only related, preserve items 2/3/attachments, footer separation, separate-cell issue metadata, title suffix and missing-data rejection');

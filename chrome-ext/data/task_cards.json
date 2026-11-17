@@ -1,0 +1,937 @@
+[
+  {
+    "Id": "tc_x_1c2c3fcd",
+    "Name": "과학교육활성화",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_354976b0",
+    "Name": "과학교육일반",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_47bd86d5",
+    "Name": "평생교육시설운영지원(문해)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "평생교육시설및운영",
+    "Item": "학력인정문해교육운영지원",
+    "JangItem": "학력인정문해교육운영지원"
+  },
+  {
+    "Id": "tc_x_5269393d",
+    "Name": "정보화직무연수운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_0cb54be5",
+    "Name": "진로및직업교육지원(직업계고매력도제고)[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "직업교육혁신지구지원센터운영",
+    "JangItem": "직업교육혁신지구지원센터운영"
+  },
+  {
+    "Id": "tc_x_36bd2247",
+    "Name": "진로및직업교육지원(직업계고맞춤형취업지원사업)[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "직업교육혁신지구지원센터운영",
+    "JangItem": "직업교육혁신지구지원센터운영"
+  },
+  {
+    "Id": "tc_x_6ac8e594",
+    "Name": "환경교육",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "생태환경교육",
+    "JangItem": "생태환경교육"
+  },
+  {
+    "Id": "tc_x_0d4f2ad9",
+    "Name": "과학교육자료실운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "value": [
+      {
+        "Id": "tc_edu",
+        "Name": "교육과정운영",
+        "Keywords": [
+          "교육과정",
+          "수업",
+          "평가",
+          "성취기준",
+          "교과"
+        ]
+      },
+      {
+        "Id": "tc_life",
+        "Name": "생활지도",
+        "Keywords": [
+          "생활",
+          "학생지도",
+          "선도",
+          "교칙",
+          "봉사"
+        ]
+      },
+      {
+        "Id": "tc_safe",
+        "Name": "안전·재난",
+        "Keywords": [
+          "안전",
+          "재난",
+          "소방",
+          "훈련",
+          "응급",
+          "감염"
+        ]
+      },
+      {
+        "Id": "tc_hr",
+        "Name": "인사·복무",
+        "Keywords": [
+          "인사",
+          "복무",
+          "연가",
+          "출장",
+          "시간외",
+          "발령"
+        ]
+      },
+      {
+        "Id": "tc_acct",
+        "Name": "예산·회계",
+        "Keywords": [
+          "예산",
+          "회계",
+          "품의",
+          "지출",
+          "계약",
+          "세입"
+        ]
+      },
+      {
+        "Id": "tc_fac",
+        "Name": "시설·환경",
+        "Keywords": [
+          "시설",
+          "공사",
+          "환경",
+          "석면",
+          "석면",
+          "석면철거",
+          "냉난방"
+        ]
+      },
+      {
+        "Id": "tc_info",
+        "Name": "정보·보안",
+        "Keywords": [
+          "정보",
+          "보안",
+          "개인정보",
+          "시스템",
+          "네트워크",
+          "홈페이지"
+        ]
+      },
+      {
+        "Id": "tc_event",
+        "Name": "행사·연수",
+        "Keywords": [
+          "연수",
+          "행사",
+          "워크숍",
+          "세미나",
+          "대회",
+          "체험"
+        ]
+      },
+      {
+        "Id": "tc_etc",
+        "Name": "일반행정",
+        "Keywords": [
+          "공문",
+          "협조",
+          "통보",
+          "안내",
+          "제출",
+          "보고"
+        ]
+      }
+    ],
+    "Count": 9,
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge"
+  },
+  {
+    "Id": "tc_x_50ab20f4",
+    "Name": "정보교육 일반",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_3305e6d4",
+    "Name": "정보교육일반",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_633e5d10",
+    "Name": "정보화운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_1403c840",
+    "Name": "인공지능기반교육지원강화",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "인공지능활용수업지원",
+    "JangItem": "인공지능활용수업지원"
+  },
+  {
+    "Id": "tc_x_74c16bdd",
+    "Name": "학력인정평생교육시설지도감독",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "평생교육시설및운영",
+    "Item": "학력인정평생교육시설운영지원",
+    "JangItem": "학력인정평생교육시설운영지원"
+  },
+  {
+    "Id": "tc_x_43bbfd78",
+    "Name": "과학실험실운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_4bc0fe80",
+    "Name": "과학실험실운영(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_17fac0e4",
+    "Name": "신기술활용교육지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털기반교육콘텐츠플랫폼운영",
+    "JangItem": "디지털기반교육콘텐츠플랫폼운영"
+  },
+  {
+    "Id": "tc_x_274475dd",
+    "Name": "혁신학교운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_0365929c",
+    "Name": "예산회계업무(과공통)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "기관기본운영비",
+    "Item": "부서운영기본경비",
+    "JangItem": "부서운영기본경비"
+  },
+  {
+    "Id": "tc_x_0ca8d90c",
+    "Name": "(신)과학교육활성화",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_5e827c44",
+    "Name": "정보화교육",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_2c45afa9",
+    "Name": "영재교육프로그램운영(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "영재교육운영",
+    "Item": "영재교육기관운영지원",
+    "JangItem": "영재교육기관운영지원"
+  },
+  {
+    "Id": "tc_x_75d0bb31",
+    "Name": "영재교육대상자선발",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "영재교육운영",
+    "Item": "영재교육대상자선발",
+    "JangItem": "영재교육대상자선발"
+  },
+  {
+    "Id": "tc_x_2a705b73",
+    "Name": "직업교육지원센터 중등진로 및 직업교육지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "직업교육지원센터진로교육지원",
+    "JangItem": "직업교육지원센터진로교육지원"
+  },
+  {
+    "Id": "tc_x_6af6ea14",
+    "Name": "해양교육",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "해양교육",
+    "JangItem": "해양교육"
+  },
+  {
+    "Id": "tc_x_2cf799f9",
+    "Name": "교실수업개선활동지원(디지털기반교실수업개선",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_6a3dacfc",
+    "Name": "과학고등학교발전방안추진(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "과학고내실화사업",
+    "JangItem": "과학고내실화사업"
+  },
+  {
+    "Id": "tc_x_6e0b6a68",
+    "Name": "과학실험실운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_4fec7beb",
+    "Name": "미디어교육운영및지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털미디어교육지원",
+    "JangItem": "디지털미디어교육지원"
+  },
+  {
+    "Id": "tc_x_144f23ad",
+    "Name": "과학교육활성화사업(초)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_53fbffe2",
+    "Name": "발명교육운영및지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_288f145b",
+    "Name": "ICT활용지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_58ca8fe9",
+    "Name": "직업교육학과개편지원(직업계고체제개편)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육환경개선",
+    "Item": "직업계고체제개편",
+    "JangItem": "직업계고체제개편"
+  },
+  {
+    "Id": "tc_x_7585c976",
+    "Name": "융합인재(STEAM)교육",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_5caa7804",
+    "Name": "부산환경체험교육관구축운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "(가칭)부산환경체험교육관설립",
+    "JangItem": "(가칭)부산환경체험교육관설립"
+  },
+  {
+    "Id": "tc_x_595033b5",
+    "Name": "스마트교육지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_18f1df38",
+    "Name": "학원교습소과외교습자원영지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "평생교육시설및운영",
+    "Item": "학원및교습소운영관리",
+    "JangItem": "학원및교습소운영관리"
+  },
+  {
+    "Id": "tc_x_21bae079",
+    "Name": "취업및직업역량강화 중등진로 및 직업교육지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "취업및직업역량강화지원",
+    "JangItem": "취업및직업역량강화지원"
+  },
+  {
+    "Id": "tc_x_3b79df70",
+    "Name": "중등진로및직업교육지원(취업및직업역량강화)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "취업및직업역량강화지원",
+    "JangItem": "취업및직업역량강화지원"
+  },
+  {
+    "Id": "tc_x_5701ff18",
+    "Name": "교육과정",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_108b70e1",
+    "Name": "과학교육일반업무",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_7f340b6d",
+    "Name": "교과교육운영및지원(환경교육)[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "생태환경교육",
+    "JangItem": "생태환경교육"
+  },
+  {
+    "Id": "tc_x_035f31c0",
+    "Name": "특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_01ba3beb",
+    "Name": "자살예방교육지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_1ed1736c",
+    "Name": "취업지원센터운영(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "취업지원센터운영",
+    "JangItem": "취업지원센터운영"
+  },
+  {
+    "Id": "tc_x_1daa9e47",
+    "Name": "정보화교육(디지털기반구축)지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털기반구축지원",
+    "JangItem": "디지털기반구축지원"
+  },
+  {
+    "Id": "tc_x_6c2f0aa5",
+    "Name": "장애인평생교육시설운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "평생학습운영",
+    "Item": "장애인평생교육지원",
+    "JangItem": "장애인평생교육지원"
+  },
+  {
+    "Id": "tc_x_7036863b",
+    "Name": "정보화교육(디지털교육자료개발)지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털교과서개발지원",
+    "JangItem": "디지털교과서개발지원"
+  },
+  {
+    "Id": "tc_x_770b90a5",
+    "Name": "스마트교육",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_06dc192d",
+    "Name": "특목고등학교운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "과학고내실화사업",
+    "JangItem": "과학고내실화사업"
+  },
+  {
+    "Id": "tc_x_5fb240f4",
+    "Name": "영재교육직무연수운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "영재교육운영",
+    "Item": "영재교육직무연수",
+    "JangItem": "영재교육직무연수"
+  },
+  {
+    "Id": "tc_x_29e966b3",
+    "Name": "정보화교육(교원AI교수학습역량강화)지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_2fc38866",
+    "Name": "직업교육학과개편지원[직업계고체제개편(특교)]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육환경개선",
+    "Item": "직업계고체제개편",
+    "JangItem": "직업계고체제개편"
+  },
+  {
+    "Id": "tc_x_57382f6b",
+    "Name": "진로및직업교육지원(직업교육혁신지구)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "직업교육혁신지구지원센터운영",
+    "JangItem": "직업교육혁신지구지원센터운영"
+  },
+  {
+    "Id": "tc_x_1d6060a0",
+    "Name": "정보화교육(저작권)지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "정보윤리교육",
+    "JangItem": "정보윤리교육"
+  },
+  {
+    "Id": "tc_x_2d8274c8",
+    "Name": "진로및직업교육지원(직업계고매력도제고)[비법정]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "직업교육혁신지구지원센터운영",
+    "JangItem": "직업교육혁신지구지원센터운영"
+  },
+  {
+    "Id": "tc_x_7155146d",
+    "Name": "진로및직업교육지원(직업계고 학점제 도입 및 운영지원)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "직업계고학점제학생중심공간조성",
+    "JangItem": "직업계고학점제학생중심공간조성"
+  },
+  {
+    "Id": "tc_x_08f0d80f",
+    "Name": "정보화교육(디지털튜터운영)지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털튜터사업지원",
+    "JangItem": "디지털튜터사업지원"
+  },
+  {
+    "Id": "tc_x_20670b5e",
+    "Name": "과학교육운영및지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_16cc9fb6",
+    "Name": "과학교육운영및지원(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "과학교육활성화지원",
+    "JangItem": "과학교육활성화지원"
+  },
+  {
+    "Id": "tc_x_02fcacb9",
+    "Name": "과학교육일반(초)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_7891bef1",
+    "Name": "정보화교육일반업무",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "정보윤리교육",
+    "JangItem": "정보윤리교육"
+  },
+  {
+    "Id": "tc_x_6ac4f919",
+    "Name": "테크센터운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "테크센터운영",
+    "JangItem": "테크센터운영"
+  },
+  {
+    "Id": "tc_x_697dc995",
+    "Name": "학교미디어교육운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털미디어교육지원",
+    "JangItem": "디지털미디어교육지원"
+  },
+  {
+    "Id": "tc_x_545876d9",
+    "Name": "특성화고교육내실화지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "특성화고AI역량강화사업",
+    "JangItem": "특성화고AI역량강화사업"
+  },
+  {
+    "Id": "tc_x_216e8e4a",
+    "Name": "진로및직업교육지원(산학일체형도제학교운영 특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "정부부처인력양성지원사업",
+    "JangItem": "정부부처인력양성지원사업"
+  },
+  {
+    "Id": "tc_x_19941f1d",
+    "Name": "정보화교육(초중고AI교육기반)지원((특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "초중고AI교육기반마련",
+    "JangItem": "초중고AI교육기반마련"
+  },
+  {
+    "Id": "tc_x_3d0e2a52",
+    "Name": "특색교육활동운영및지원(특수건강진단실시 특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육환경개선",
+    "Item": "특성화고실습실안전보건관리개선",
+    "JangItem": "특성화고실습실안전보건관리개선"
+  },
+  {
+    "Id": "tc_x_14e8c4c0",
+    "Name": "정보화교육(디지털기반교육)지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털기반교육지원",
+    "JangItem": "디지털기반교육지원"
+  },
+  {
+    "Id": "tc_x_3e8c4063",
+    "Name": "정보화교육(디지털교과서및ICT활용수업개선)지원[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털기반교육혁신지원",
+    "JangItem": "디지털기반교육혁신지원"
+  },
+  {
+    "Id": "tc_x_7c5aa8cd",
+    "Name": "이러닝 세계화",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "국제교육문화교류협력지원",
+    "Item": "교류협력국교육정보화인프라지원",
+    "JangItem": "교류협력국교육정보화인프라지원"
+  },
+  {
+    "Id": "tc_x_20a100ed",
+    "Name": "학교정보화기기보급관리",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "학교정보화여건개선",
+    "Item": "클라우드기반정보교실운영",
+    "JangItem": "클라우드기반정보교실운영"
+  },
+  {
+    "Id": "tc_x_286f047d",
+    "Name": "정보화교육(초중고AI교육기반)지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "초중고AI교육기반마련",
+    "JangItem": "초중고AI교육기반마련"
+  },
+  {
+    "Id": "tc_x_13701ecf",
+    "Name": "인공지능기반교육지원강화[특교]",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "인공지능활용수업지원",
+    "JangItem": "인공지능활용수업지원"
+  },
+  {
+    "Id": "tc_x_4dd182b4",
+    "Name": "과학교실운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영여건개선",
+    "Item": "과학실환경개선",
+    "JangItem": "과학실환경개선"
+  },
+  {
+    "Id": "tc_x_780550b4",
+    "Name": "정보화교육(디지털교육자료개발)지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "디지털교과서개발지원",
+    "JangItem": "디지털교과서개발지원"
+  },
+  {
+    "Id": "tc_x_69bfa0a9",
+    "Name": "정보화교육일반(초)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_6bd2e6f9",
+    "Name": "영재교육기관운영",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "영재교육운영",
+    "Item": "영재교육기관운영지원",
+    "JangItem": "영재교육기관운영지원"
+  },
+  {
+    "Id": "tc_x_3932e680",
+    "Name": "교육정보화일반",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "ICT활용교육지원",
+    "Item": "교원AI교수학습역량강화지원",
+    "JangItem": "교원AI교수학습역량강화지원"
+  },
+  {
+    "Id": "tc_x_5bf17371",
+    "Name": "학원교습소개인과외지도감독",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "평생교육시설및운영",
+    "Item": "학원및교습소등지도감독",
+    "JangItem": "학원및교습소등지도감독"
+  },
+  {
+    "Id": "tc_x_7e920930",
+    "Name": "STEAM장학및교수학습자료개발보급(특교)",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "교육과정운영지원",
+    "Item": "창의융합교육",
+    "JangItem": "창의융합교육"
+  },
+  {
+    "Id": "tc_x_438b61b9",
+    "Name": "특성화고운영지원",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "직업교육운영",
+    "Item": "기능경기대회훈련지원",
+    "JangItem": "기능경기대회훈련지원"
+  },
+  {
+    "Id": "tc_x_587ab6d4",
+    "Name": "특성화고취업역량강화",
+    "Keywords": null,
+    "Owners": null,
+    "Source": "excel+merge",
+    "Detail": "취업역량강화",
+    "Item": "취업및직업역량강화지원",
+    "JangItem": "취업및직업역량강화지원"
+  }
+]

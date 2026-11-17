@@ -1,0 +1,132 @@
+{
+  "manifest_version": 3,
+  "name": "교직원 업무도우미",
+  "version": "1.4.19",
+  "description": "교육청 업무포털·에듀파인·나이스 fill-only 도우미 (단일 도킹 · 개인용)",
+  "minimum_chrome_version": "114",
+  "action": {
+    "default_title": "교직원 업무도우미",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "alarms",
+    "clipboardWrite",
+    "clipboardRead",
+    "idle",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://klef.pen.go.kr/*",
+    "https://*.pen.go.kr/*",
+    "https://pen.eduptl.kr/*",
+    "https://*.eduptl.kr/*",
+    "https://neis.me/*",
+    "https://*.neis.go.kr/*",
+    "https://*.sen.go.kr/*",
+    "https://calendar.google.com/*",
+    "https://mail.korea.kr/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "commands": {
+    "open-portal": {
+      "suggested_key": {
+        "default": "Alt+Shift+P",
+        "windows": "Alt+Shift+P"
+      },
+      "description": "업무포털 열기 (인증서 로그인)"
+    },
+    "open-edufine": {
+      "description": "K-에듀파인 열기 (업무포털 로그인부터)"
+    },
+    "open-neis": {
+      "description": "나이스 열기 (업무포털 로그인부터)"
+    },
+    "fill-duty-preset": {
+      "description": "복무 프리셋 1번으로 채우기 (상신 안 함)"
+    },
+    "open-dock": {
+      "suggested_key": {
+        "default": "Alt+Shift+D",
+        "windows": "Alt+Shift+D",
+        "mac": "Alt+Shift+D"
+      },
+      "description": "교직원 업무도우미 도킹 열기/포커스"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://klef.pen.go.kr/*",
+        "https://*.pen.go.kr/*",
+        "https://pen.eduptl.kr/*",
+        "https://*.eduptl.kr/*",
+        "https://neis.me/*",
+        "https://*.neis.go.kr/*",
+        "https://*.sen.go.kr/*"
+      ],
+      "js": [
+        "lib/proofread-core.js",
+        "radial-menu.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": [
+        "https://calendar.google.com/*"
+      ],
+      "js": [
+        "gcal-content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'self'; form-action 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*.png"
+      ],
+      "matches": [
+        "https://klef.pen.go.kr/*",
+        "https://*.pen.go.kr/*",
+        "https://pen.eduptl.kr/*",
+        "https://*.eduptl.kr/*",
+        "https://neis.me/*",
+        "https://*.neis.go.kr/*",
+        "https://*.sen.go.kr/*"
+      ]
+    }
+  ]
+}

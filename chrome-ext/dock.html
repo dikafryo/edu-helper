@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>교직원 업무도우미</title><link rel="stylesheet" href="dock.css"><link rel="stylesheet" href="application.css"></head><body>
+<header><strong>교직원 업무도우미</strong><p id="target" class="target">대상 선택…</p><button type="button" id="pinBtn" class="pin" aria-pressed="false" aria-label="위치 고정">📌</button></header>
+<nav id="actions" class="grid" aria-label="업무 기능">
+<button type="button" data-act="noticeDraft">공문안내</button>
+<button type="button" data-act="proofread">오타확인</button>
+<button type="button" data-act="travelApplication">출장신청</button>
+<button type="button" data-act="todoAdd">할일추가(Google)</button>
+</nav>
+<section class="editor" aria-label="공문 편집">
+<div class="field-heading"><label for="noticeSourceTitle">제목</label><button id="noticeTitleCopy" type="button">제목복사</button></div>
+<input id="noticeSourceTitle" type="text" placeholder="공문 제목을 입력하세요">
+<div class="field-heading"><label for="noticeRichPreview">본문</label><button id="noticeRichCopy" type="button">본문복사</button></div>
+<div id="noticeRichPreview" contenteditable="true" role="textbox" aria-multiline="true" aria-label="본문" data-placeholder="본문을 붙여넣거나 공문안내를 누르세요."></div>
+</section>
+<p id="status" class="status" role="status" aria-live="polite" hidden></p>
+<script src="dock.js" type="module"></script></body></html>

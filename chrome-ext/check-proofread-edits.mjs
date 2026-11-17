@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {proofreadNotice,applyEdits,correctionHtml} from './lib/proofread.js';
+const source='1. 관련\n  가. 내용\n 나. 몇일 후 할수 있습니다.\n    1) 세부\n   3) 다음\n3. 후속\n 가. 새 항목';
+const r=proofreadNotice(source);
+assert.equal(r.corrected,'1. 관련\n  가. 내용\n  나. 며칠 후 할 수 있습니다.\n    1) 세부\n    2) 다음\n2. 후속\n  가. 새 항목');
+assert.equal(r.issues.filter(i=>i.type==='들여쓰기 불일치').length,3);
+assert.equal(proofreadNotice(r.corrected).edits.length,0);
+assert.equal(applyEdits(source,[]),source);
+assert.equal(proofreadNotice('1. A\n3. B\n4. C').corrected,'1. A\n2. B\n3. C');
+assert.equal(proofreadNotice('1. A\n  가. B\n\t나. C').corrected,'1. A\n  가. B\n  나. C');
+assert.equal(proofreadNotice('1. A\n  가. B\n    1) C\n2. D\n  가. E\n    1) F').edits.length,0);
+const html=correctionHtml('<script>\n몇일',proofreadNotice('<script>\n몇일').edits);
+assert.ok(!html.includes('<script>'));assert.ok(html.includes('color:#c62828'));assert.ok(html.includes('며칠'));
+assert.equal(proofreadNotice('2026. 11. 3.\n3.14').edits.length,0);
+console.log('PASS: hierarchical renumbering, canonical continuation, same-level indentation across parents, tab/space distinction, idempotence, escaped red preview');

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {prepareCertDialog,submitCertPassword} from './lib/portal-open.js';
+let now=0,clicks=0,opened=false;
+const row={offsetWidth:8,cells:[{}, {innerText:'fixture'}],classList:{contains:()=>true}};
+const button={offsetWidth:8,focus(){},click(){clicks++;if(clicks===3)opened=true;}};
+const context=vm.createContext({Date:{now:()=>now},setTimeout:fn=>{now+=150;fn();},document:{querySelector:s=>s==='#btnLgn'?button:s==='#kc_dialog_default'&&opened?{offsetWidth:8}:null,querySelectorAll:()=>opened?[row]:[]}});
+assert.equal((await vm.runInContext('('+prepareCertDialog.toString()+')()',context)).ok,true);assert.equal(clicks,3);
+clicks=0;assert.equal((await vm.runInContext('('+prepareCertDialog.toString()+')()',context)).ok,true);assert.equal(clicks,0);
+let submitted=0;
+const confirm={disabled:true,click(){submitted++;}};
+const input={value:'',readOnly:true,focus(){},dispatchEvent(){confirm.disabled=false;}};
+globalThis.document={querySelector:s=>s.includes('certPassword')?input:confirm};
+assert.equal(submitCertPassword('fixture-only'),true);assert.equal(submitted,1);
+console.log('PASS: delayed provider opens on third attempt; open dialog is reused; readonly widget receives value before confirmation enablement; single submission');

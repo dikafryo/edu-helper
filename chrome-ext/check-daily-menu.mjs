@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {navigateWorkMenu} from './lib/work-page.js';
+let clicked=[],items=[];
+const item=(text,collapsed=false,click=()=>{})=>({innerText:text,getClientRects:()=>[{}],getAttribute:()=>null,classList:{contains:()=>collapsed},click(){clicked.push(text);click();}});
+globalThis.document={querySelectorAll:()=>items};
+items=[item('복무'),item('개인근무상황관리'),item('일일근무상황조회')];
+assert.equal((await navigateWorkMenu('daily',true)).ok,true);
+assert.deepEqual(clicked,['일일근무상황조회']);
+clicked=[];items=[item('복무'),item('개인근무상황관리')];
+assert.equal((await navigateWorkMenu('daily',true)).ok,false);assert.equal(clicked.length,0);
+clicked=[];items=[item('복무',true,()=>items.push(item('일일근무상황조회')))];
+assert.equal((await navigateWorkMenu('daily',true)).ok,true);assert.deepEqual(clicked,['복무','일일근무상황조회']);
+clicked=[];items=[item('일일 근무상황 조회 3단계 메뉴항목')];
+assert.equal((await navigateWorkMenu('daily',true)).ok,true);
+console.log('PASS: exact daily inquiry destination, no personal-duty fallback, collapsed duty expansion, normalized label');

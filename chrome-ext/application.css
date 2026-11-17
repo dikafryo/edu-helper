@@ -1,0 +1,10 @@
+.start-lock { margin:16px; padding:18px; background:#fff; color:#21334b; border:1px solid #dce5f0; border-radius:14px; }
+.start-lock h2 { font-size:18px; }
+.start-lock p,.start-lock a { font-size:12px; line-height:1.6; }
+.start-lock input,.application-form input,.application-form select { box-sizing:border-box; width:100%; padding:9px; border:1px solid #ccd7e5; border-radius:8px; background:white; color:#21334b; }
+.start-lock button,.application-form button { padding:9px; margin:8px 4px 0 0; border:0; border-radius:8px; background:#245fc2; color:white; cursor:pointer; }
+.application-form { margin:12px 0; padding:12px; border:1px solid #ccd7e5; border-radius:12px; background:#fff; color:#21334b; }
+.application-form label { display:block; margin:8px 0; font-size:12px; }
+.application-form p { font-size:11px; line-height:1.6; }
+.application-form h3 { margin:0 0 12px; font-size:14px; }
+[hidden] { display:none !important; }

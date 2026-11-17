@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {prepareCertDialog,startQuickOpen,readPortalScreen} from './lib/portal-open.js';
+let time=0,clicks=0;
+const button={offsetWidth:10,click:()=>clicks++};
+const ctx=vm.createContext({Date:{now:()=>time},setTimeout:fn=>{time+=200;fn();},document:{querySelector:s=>s==='#btnLgn'?button:null,querySelectorAll:()=>[]}});
+const r=await vm.runInContext('('+prepareCertDialog.toString()+')()',ctx);
+assert.equal(r.ok,false);assert.equal(clicks,3);assert.ok(time<=12600);
+globalThis.document={querySelector:()=>button,querySelectorAll:()=>[{offsetWidth:20}]};assert.equal(readPortalScreen(),'main');
+const calls=[];
+globalThis.chrome={tabs:{query:async()=>[{id:1,windowId:2,status:'loading',url:'https://pen.eduptl.kr/',active:true}],update:async()=>{},create:async()=>{throw new Error('duplicate tab');}},windows:{update:async()=>{}},storage:{session:{set:async()=>{}}},scripting:{executeScript:async p=>{calls.push(p.func.name);return [{result:'main'}];}}};
+assert.equal((await startQuickOpen('portal','')).ok,true);assert.ok(!calls.includes('prepareCertDialog'));
+console.log('PASS: bounded certificate-opening retries with bounded wait; ready menu beats login remnants; loading tab reuses ready session without authentication');
