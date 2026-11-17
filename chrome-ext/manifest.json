@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "교직원 업무도우미",
-  "version": "1.4.19",
+  "version": "1.4.20",
   "description": "교육청 업무포털·에듀파인·나이스 fill-only 도우미 (단일 도킹 · 개인용)",
   "minimum_chrome_version": "114",
   "action": {
